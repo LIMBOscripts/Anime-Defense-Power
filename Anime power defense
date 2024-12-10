@@ -1,0 +1,38 @@
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
+local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
+
+local Window = Fluent:CreateWindow({
+    Title = "Anime Power Defense" .. Fluent.Version,
+    SubTitle = "by POGI YT",
+    TabWidth = 160,
+    Size = UDim2.fromOffset(580, 460),
+    Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
+    Theme = "Ocean",
+    MinimizeKey = Enum.KeyCode.LeftControl -- Used when theres no MinimizeKeybind
+})
+
+--Fluent provides Lucide Icons https://lucide.dev/icons/ for the tabs, icons are optional
+local Tabs = {
+    Main = Window:AddTab({ Title = "Infinite Gems", Icon = "" }),
+    Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
+}
+
+local Options = Fluent.Options
+
+do
+    Fluent:Notify({
+        Title = "Notification",
+        Content = "SUB TO POGI YT",
+        SubContent = "SubContent", -- Optional
+        Duration = 5 -- Set to nil to make the notification not disappear
+    })
+
+ -- Add a Button to Your Existing Window
+YourTab:AddButton({
+    Name = "Execute Script 1",
+    Callback = function()
+        -- Add the script you want to execute here
+        game:GetService("ReplicatedStorage").Modules.Packages.Knit.Services.ShopService.RF.PurchasePortalItem:InvokeServer("5007",0/0)
+    end
+})
